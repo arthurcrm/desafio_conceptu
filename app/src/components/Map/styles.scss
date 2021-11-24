@@ -1,0 +1,10 @@
+.map {
+  svg {
+    width: 500px;
+    height: 300px;
+
+    path[id*='1200013'] {
+      fill: blue;
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Map } from '../Map';
 import './styles.scss';
 
 export function SelectState() {
@@ -11,8 +12,6 @@ export function SelectState() {
       `https://servicodados.ibge.gov.br/api/v3/malhas/estados/${selectedState}?formato=image/svg+xml&qualidade=intermediaria&intrarregiao=municipio`,
     ).then(res => setSvgUrl(res.url));
   }
-
-  console.log('SelectState - svgUrl', svgUrl);
 
   const estados = [
     {
@@ -165,9 +164,6 @@ export function SelectState() {
     '2019',
   ];
 
-  console.log('SelectState - selectedInterval', selectedInterval);
-  console.log('SelectState - selectedState', selectedState);
-
   return (
     <div className="container">
       <h2>Selecione um estado e um intervalo de tempo</h2>
@@ -205,7 +201,13 @@ export function SelectState() {
         GERAR MAPA
       </button>
 
-      {svgUrl ? <img width={480} height={480} src={svgUrl} alt="Mapa" /> : null}
+      {svgUrl ? (
+        <Map
+          ano={selectedInterval}
+          estadoAbrev={selectedState}
+          svgUrl={svgUrl}
+        />
+      ) : null}
     </div>
   );
 }
