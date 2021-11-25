@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Map as MapComponent, MapContainer } from './styles';
 import munData from '../../assets/data.json';
 
@@ -46,10 +45,8 @@ export function Map({ svgUrl, estadoAbrev, ano }: MapProps) {
     });
 
   return (
-    <div className="map">
-      <MapContainer>
-        <MapComponent munConfig={data} data-src={svgUrl} />
-      </MapContainer>
-    </div>
+    <MapContainer>
+      <MapComponent munConfig={data} data-src={svgUrl} />
+    </MapContainer>
   );
 }
