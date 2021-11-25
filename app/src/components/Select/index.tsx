@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Map } from '../Map';
-import './styles.scss';
+import { SelectContainer, SelectContent, Title } from './styles';
 
 export function SelectState() {
   const [selectedState, setSelectedState] = useState('');
@@ -165,10 +165,11 @@ export function SelectState() {
   ];
 
   return (
-    <div className="container">
-      <h2>Selecione um estado e um intervalo de tempo</h2>
-      <div className="select">
+    <SelectContainer>
+      <Title>Selecione um estado e um intervalo de tempo</Title>
+      <SelectContent>
         <select
+          className="select"
           value={selectedState}
           onChange={e => setSelectedState(e.target.value)}
           name="state"
@@ -196,7 +197,7 @@ export function SelectState() {
             </option>
           ))}
         </select>
-      </div>
+      </SelectContent>
       <button onClick={handleClickButton} type="button">
         GERAR MAPA
       </button>
@@ -208,6 +209,6 @@ export function SelectState() {
           svgUrl={svgUrl}
         />
       ) : null}
-    </div>
+    </SelectContainer>
   );
 }

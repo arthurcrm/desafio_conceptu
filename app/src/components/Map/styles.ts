@@ -21,15 +21,15 @@ export const MapContainer = styled.div`
   margin: 1rem 0;
   padding-bottom: 2rem;
 
-  border: 1px solid red;
+  border-radius: 0.3rem;
+  background: #28464b;
 
   color: white;
 `;
 
 export const Map = styled.svg<MapProps>`
-  width: 30rem;
+  max-width: 35rem;
   height: 15rem;
-
   margin-top: 2rem;
 
   ${props => {
@@ -37,6 +37,11 @@ export const Map = styled.svg<MapProps>`
       return `
       path[id*='${config.id_munic}'] {
         fill: ${config.color};
+
+        &:hover {
+          stroke: black;
+          stroke-width: 360px;
+        }
       }
       `;
     });

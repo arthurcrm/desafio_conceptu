@@ -35,7 +35,10 @@
     "react/react-in-jsx-scope": "off",
     "arrow-parens": "off",
     "camelcase": "off",
-    "prefer-const": "off"
+    "prefer-const": "off",
+    "no-param-reassign": "off",
+    "react/jsx-indent": "off",
+    "arrow-body-style": "off"
   },
   "settings": {
     "import/resolver": {

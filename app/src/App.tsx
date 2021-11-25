@@ -1,3 +1,4 @@
+import { Container } from './components/Container/styles';
 import { SelectState } from './components/Select';
 
 import './styles/globalStyles.scss';
@@ -5,7 +6,9 @@ import './styles/globalStyles.scss';
 function App() {
   return (
     <>
-      <SelectState />
+      <Container>
+        <SelectState />
+      </Container>
     </>
   );
 }
