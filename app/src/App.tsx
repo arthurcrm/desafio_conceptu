@@ -1,7 +1,16 @@
-import React from 'react';
+import { Container } from './components/Container/styles';
+import { SelectState } from './components/Select';
+
+import './styles/globalStyles.scss';
 
 function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <>
+      <Container>
+        <SelectState />
+      </Container>
+    </>
+  );
 }
 
 export default App;
