@@ -1,10 +1,14 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
+
+interface MunConfigProps {
+  id_munic: number;
+  nomemun: string;
+  cob_vac_bcg: number;
+  color: string;
+}
 
 interface MapProps {
-  id_munic: string;
-  nomeMunincipio: string;
-  valueVacinacao: number;
-  customColor: string;
+  munConfig: MunConfigProps[];
 }
 
 export const MapContainer = styled.div`
@@ -14,7 +18,10 @@ export const MapContainer = styled.div`
   flex-direction: column;
   text-align: center;
 
-  margin-bottom: 1rem;
+  margin: 1rem 0;
+  padding-bottom: 2rem;
+
+  border: 1px solid red;
 
   color: white;
 `;
@@ -23,7 +30,15 @@ export const Map = styled.svg<MapProps>`
   width: 30rem;
   height: 15rem;
 
-  path[id*='${props => props.id_munic}'] {
-    fill: ${props => props.customColor};
-  }
+  margin-top: 2rem;
+
+  ${props => {
+    return props.munConfig.map((config: MunConfigProps) => {
+      return `
+      path[id*='${config.id_munic}'] {
+        fill: ${config.color};
+      }
+      `;
+    });
+  }}
 `;
