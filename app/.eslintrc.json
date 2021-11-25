@@ -34,7 +34,8 @@
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "react/react-in-jsx-scope": "off",
     "arrow-parens": "off",
-    "camelcase": "off"
+    "camelcase": "off",
+    "prefer-const": "off"
   },
   "settings": {
     "import/resolver": {
